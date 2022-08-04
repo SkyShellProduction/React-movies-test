@@ -12,7 +12,7 @@ export default class Main extends Component {
         this.showMovies();
     }
     showMovies = (str = 'matrix', type = '') => {
-        const url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${str ? str : 'matrix'}&type=${type !== 'all' ? type : ''}`;
+        const url = `https://www.omdbapi.com/?apikey=${API_KEY}&s=${str ? str : 'matrix'}&type=${type !== 'all' ? type : ''}`;
         this.setState({loading: true})
         fetch(url)
         .then(res => res.json())
