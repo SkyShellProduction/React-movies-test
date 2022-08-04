@@ -1,16 +1,14 @@
-import React from "react";
-const Movies = (props) => {
+import OneMovie from "./OneMovie"
+
+export default function Movies(props) {
+    const movies = props.movies || []
     return (
-        <React.Fragment>
-            <div className="movies">
-                <h3 className="movies__title">{props.title}</h3>
-                <p className="movies__money">Сборы в мире: {props.price}</p>
-                <div className="movies__children">
-                    {props.children}
-                    {/* аналог слотов в vue */}
-                </div>
-            </div>
-        </React.Fragment>
+        <div className="movies">
+            {movies.length ? 
+                movies.map(item => <OneMovie movie={item} key={item.imdbID}/>)
+                :
+                <p>Nothing to Found</p>
+            }
+        </div>
     )
 }
-export default Movies;

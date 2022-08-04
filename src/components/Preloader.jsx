@@ -1,9 +1,8 @@
 import React from "react";
-const Preloader = () => {
+export default function Preloader() {
     return (
-        <React.Fragment>
-            <h3>Идет загрузка...</h3>
-        </React.Fragment>
+        <div className="progress">
+            <div className="indeterminate"></div>
+        </div>
     )
 }
-export default Preloader;
