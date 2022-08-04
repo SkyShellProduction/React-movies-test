@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Book from './components/Book';
+import Movies from './components/Movies';
+import Preloader from './components/Preloader';
 
-function App() {
-  return (
+function App(props) {
+  return props.isLoading ? (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Book name="Angular" text="lorem ipsum dolor"/>
+      <Book name="React" text="lorem ipsum dolor"/>
+      <Book name="Vue" text="lorem ipsum dolor"/>
+      <Movies title="Harry Poter" price="1 billion $">
+          <p>data children</p>
+          <p>data children</p>
+          <p>data children</p>
+      </Movies>
     </div>
-  );
+  ) : <Preloader />
 }
 
 export default App;
