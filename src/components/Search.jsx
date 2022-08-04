@@ -23,7 +23,7 @@ export default class Search extends Component {
                     <input 
                         type="search" 
                         className="validate" 
-                        placeholder="Search..."
+                        placeholder="Search media..."
                         value={this.state.search}
                         onChange={(e) => this.setState({search: e.target.value})}
                         onKeyDown={this.handleKey}/>
