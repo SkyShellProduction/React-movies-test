@@ -20,6 +20,10 @@ export default class Main extends Component {
             // console.log(res);
             this.setState({movies: res.Search, loading: false})
         })
+        .catch(e => {
+            console.log(e);
+            this.setState({loading: false});
+        })
     }
     render() {
         const {movies} = this.state;
